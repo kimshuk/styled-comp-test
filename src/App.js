@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -17,13 +17,19 @@ const Button = styled.button`
   background-color: ${props => (props.danger ? "#c0392b" : "#27ae60")};
 `;
 
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: #bdc3c7;
+`;
+
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <Container>
         <Button success>Success</Button>
         <Button danger>Danger</Button>
-      </Fragment>
+      </Container>
     );
   }
 }

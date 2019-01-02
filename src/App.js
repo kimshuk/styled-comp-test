@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #bdc3c7;
+  }
+`;
 
 const Button = styled.button`
   border-radius: 50px;
@@ -17,19 +27,14 @@ const Button = styled.button`
   background-color: ${props => (props.danger ? "#c0392b" : "#27ae60")};
 `;
 
-const Container = styled.div`
-  height: 100vh;
-  width: 100%;
-  background-color: #bdc3c7;
-`;
-
 class App extends Component {
   render() {
     return (
-      <Container>
+      <>
+        <GlobalStyle />
         <Button success>Success</Button>
         <Button danger>Danger</Button>
-      </Container>
+      </>
     );
   }
 }
